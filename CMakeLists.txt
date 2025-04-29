@@ -131,7 +131,7 @@ include/Agent.h
 include/MultiAgentViewer.h
 include/AgentViewer.h)
 
-# add_subdirectory(Thirdparty/g2o)
+add_subdirectory(Thirdparty/g2o)
 
 target_link_libraries(${PROJECT_NAME}
 ${OpenCV_LIBS}
