@@ -2,7 +2,7 @@ echo "Installing Pangolin ..."
 cd Pangolin/
 ./scripts/install_prerequisites.sh recommended -u -y
 apt install python3-pip -y
-cmake -B build -GNinja
+cmake -B build -GNinja -DCMAKE_CXX_FLAGS="-w"
 cmake --build build
 cd ..
 
@@ -48,5 +48,5 @@ mkdir build
 cd build
 apt update
 apt install libboost-serialization-dev -y
-cmake .. -DCMAKE_BUILD_TYPE=Release  -DPangolin_DIR=/ORB_SLAM3/Pangolin/build -DCMAKE_CXX_FLAGS="-w"
+cmake .. -DCMAKE_BUILD_TYPE=Release  -DPangolin_DIR=/MAM3SLAM/Pangolin/build -DCMAKE_CXX_FLAGS="-w"
 make -j1
