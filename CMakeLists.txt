@@ -40,6 +40,14 @@ find_package(OpenCV 4.4)
      message(FATAL_ERROR "OpenCV > 4.4 not found.")
   endif()
 
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2/lib/libDBoW2.so")
+    message(FATAL_ERROR "DBoW2 library not found. Please build it first.")
+endif()
+
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so")
+    message(FATAL_ERROR "g2o library not found. Please build it first.")
+endif()
+
 # find_package(OpenCV 3.2)
 #    if(NOT OpenCV_FOUND)
 #       message(FATAL_ERROR "OpenCV > 4.4 not found.")
@@ -130,9 +138,6 @@ include/MultiAgentSystem.h
 include/Agent.h
 include/MultiAgentViewer.h
 include/AgentViewer.h)
-
-add_subdirectory(Thirdparty/g2o)
-add_subdirectory(Thirdparty/DBoW2)
 
 target_link_libraries(${PROJECT_NAME}
 ${OpenCV_LIBS}
