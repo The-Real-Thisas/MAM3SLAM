@@ -35,15 +35,3 @@ RUN apt-get update && apt-get install -y \
     libavutil-dev libavformat-dev libswscale-dev libavdevice-dev && \
     rm -rf /var/lib/apt/lists/*
 
-# Put all your deps in /deps
-WORKDIR /deps
-
-# Copy dependencies and vocab ONLY
-COPY Pangolin ./Pangolin
-COPY Thirdparty ./Thirdparty
-COPY Vocabulary ./Vocabulary
-COPY build_deps.sh ./build_deps.sh
-
-RUN chmod +x ./build_deps.sh && ./build_deps.sh
-
-WORKDIR /MAM3SLAM
