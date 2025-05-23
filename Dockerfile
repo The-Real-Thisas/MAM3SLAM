@@ -35,3 +35,4 @@ RUN apt-get update && apt-get install -y \
     libavutil-dev libavformat-dev libswscale-dev libavdevice-dev && \
     rm -rf /var/lib/apt/lists/*
 
+WORKDIR /MAM3SLAM

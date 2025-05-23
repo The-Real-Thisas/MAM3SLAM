@@ -22,7 +22,7 @@ if [ "$REINSTALL" = true ] || ! directory_exists_not_empty "Pangolin/build"; the
   apt install python3-pip -y
   cmake -B build -GNinja -DCMAKE_CXX_FLAGS="-w"
   cmake --build build
-  cd ..
+  cd /MAM3SLAM
 else
   echo "Pangolin already built. Skipping. Use --reinstall to force rebuild."
 fi
@@ -36,7 +36,7 @@ if [ "$REINSTALL" = true ] || ! directory_exists_not_empty "Thirdparty/DBoW2/bui
   apt-get install -y libboost-dev libopencv-dev
   cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-w"
   make -j$(nproc)
-  cd ../../
+  cd /MAM3SLAM
 else
   echo "DBoW2 already built. Skipping. Use --reinstall to force rebuild."
 fi
@@ -48,7 +48,7 @@ if [ "$REINSTALL" = true ] || ! directory_exists_not_empty "Thirdparty/g2o/build
   mkdir -p build && cd build
   cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-w"
   make -j$(nproc)
-  cd ../../
+  cd /MAM3SLAM
 else
   echo "g2o already built. Skipping. Use --reinstall to force rebuild."
 fi
@@ -60,7 +60,7 @@ if [ "$REINSTALL" = true ] || ! directory_exists_not_empty "Thirdparty/Sophus/bu
   mkdir -p build && cd build
   cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-w"
   make -j$(nproc)
-  cd ../../..
+  cd /MAM3SLAM
 else
   echo "Sophus already built. Skipping. Use --reinstall to force rebuild."
 fi
