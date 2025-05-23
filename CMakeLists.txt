@@ -167,3 +167,7 @@ target_link_libraries(testPangolin ${PROJECT_NAME})
 add_executable(testFileWriting
          test/testFileWriting.cc)
 target_link_libraries(testFileWriting ${PROJECT_NAME})
+
+add_executable(mono_euroc
+        test/mono_euroc.cc)
+target_link_libraries(mono_euroc ${PROJECT_NAME})
